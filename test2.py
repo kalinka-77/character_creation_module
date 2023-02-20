@@ -46,7 +46,7 @@ def start_training(char_name: str, char_class: str) -> str:
     print('Если не хочешь тренироваться, введи команду skip.')
     cmd: str = None
     while cmd != 'skip':
-        cmd= input('Введи команду: ')
+        cmd = input('Введи команду: ')
         if cmd == 'attack':
             print(attack(char_name, char_class))
         if cmd == 'defence':
@@ -57,8 +57,8 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
-    approve_choice: str = ''
-    char_class: str = ''
+    approve_choice: str = None
+    char_class: str = None
     while approve_choice != 'y':
         char_class = input('Введи название персонажа, за которого хочешь '
                            'играть: Воитель — warrior, Маг — mage,'
@@ -76,18 +76,3 @@ def choice_char_class() -> str:
                                'другую кнопку, чтобы выбрать другого '
                                'персонажа ').lower()
     return char_class
-
-
-def main():
-    print('Приветствую тебя, искатель приключений!')
-    print('Прежде чем начать игру...')
-    char_name: str = input('...назови себя: ')
-    print(f'Здравствуй, {char_name}! '
-          'Сейчас твоя выносливость — 80, атака — 5 и защита — 10.')
-    print('Ты можешь выбрать один из трёх путей силы:')
-    print('Воитель, Маг, Лекарь')
-    char_class: str = choice_char_class()
-    print(start_training(char_name, char_class))
-
-
-main()
